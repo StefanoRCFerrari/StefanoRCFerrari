@@ -4,7 +4,7 @@
 - 💞️ I’m looking to collaborate on anything that'll pave a solid career path!
 - 📫 How to reach me stefanorcferrari@gmail.com. From there, we may exchange further contact info.
 - 😄 Pronouns: He, him or Milord
-- ⚡ Fun fact: I can't make any sounds when I laugh, so I may even shed a few tears due laughter, but it'll be absolutely silent
+- ⚡ Fun fact: I can't make any sounds when I laugh, so I may even shed a few tears due to laughter, but it'll be absolutely silent
 
 <!---
 StefanoRCFerrari/StefanoRCFerrari is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
