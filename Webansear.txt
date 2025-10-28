@@ -104,4 +104,9 @@ When Shotwell joined SpaceX in 2002, the company was still a fledgling, ambitiou
 But it was Shotwell, not Musk, who helped secure some of the company’s most significant NASA contracts.
 She played a crucial role in the development of the Falcon 9, the first reusable rocket, which dramatically cut space exploration costs.
 Under her leadership, SpaceX achieved historic milestones, including the first commercially crewed spaceflight in 2020 and the Crew Dragon mission, which transported astronauts to the International Space Station.
+
 Her future goals include expanding space tourism and advancing plans to colonize Mars.
+
+
+
+https://visusllc.com/blog/building-a-multi-step-timeline-with-pure-css--a-creative-frontend-solution
