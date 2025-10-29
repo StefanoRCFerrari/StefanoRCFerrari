@@ -1,16 +1,3 @@
-Ada Lovelace (1815–1852): Considered the first computer programmer, Lovelace wrote the first algorithm intended for Charles Babbage's Analytical Engine in 1843.
-Her notes were a century ahead of their time, outlining a machine's potential for more than mere calculation by processing symbols to compose music or generate graphics.
-
-
-Margaret Hamilton (1936–present): A computer scientist who led the Software Engineering Division at M.I.T., Hamilton developed the on-board flight software for NASA's Apollo space missions.
-Her code famously saved the Apollo 11 moon landing from being aborted due to a computer overload.
-
-
-The ENIAC Programmers (1940s): Recruited to calculate ballistics trajectories during WWII, six mathematicians — Kay McNulty, Marlyn Wescoff, Fran Bilas, Ruth Lichterman,
-Betty Snyder, and Jean Bartik—were the first to program the ENIAC, the world's first electronic, digital computer. The military initially downplayed their contributions,
-and their work was not fully recognized until decades later.
-
-
 Sheryl Sandberg (1969–present): As COO of Meta (formerly Facebook), Sandberg has been a prominent and influential executive in the modern tech industry,
 helping to scale the company and redefine the social media landscape.
 
@@ -22,91 +9,15 @@ Her organization provides education and resources to encourage young women and g
 Fei-Fei Li (1976–present): A pioneer in artificial intelligence and computer vision, Li is the co-director of Stanford's Human-Centered AI Institute. She led the creation of ImageNet,
 a massive database that revolutionized deep learning and enabled major advancements in AI. 
 
-Ada Cria
-Margaret salva
-ENIAC não reconhece
-Sheryl lidera
-Reshma fortalece
-Fei-Fei Li IA
 
 
 
+Fintechs (Brasil)Cristina Junqueira (Cofundadora do Nubank)Embora não seja uma adolescente, Cristina é uma inspiração fundamental para a nova geração, representando uma das mulheres mais importantes no universo das fintechs globais.
+1982-atual
 
 
+Empreendedorismo e Inovação	Isabella Peracchi (Brasileira - Forbes Under 30)	Reconhecida na categoria Tecnologia e Informação, representa a geração que utiliza a inovação para criar novas soluções e está disposta a desafiar o status quo de ser jovem e mulher na indústria.
+1994-presente
 
-Edith Clarke (1883–1959): An electrical engineer and the first woman to graduate with an M.I.T. master's degree in electrical engineering, Clarke invented the
-"Clarke calculator". It was a graphical calculator that simplified calculations for solving problems in electrical power transmission lines.
-
-Mary Keller (1913–1985): Sister Mary Keller broke barriers in computer science, becoming the first woman to earn a Ph.D. in the field. She co-developed BASIC,
-a beginner-friendly programming language that opened doors for countless learners.
-As an advocate for women in STEM, she encouraged working mothers to bring their babies to class—a progressive stance for the time
-
-Hedy Lamarr (1914–2000): A Hollywood actress and inventor, Lamarr co-patented a frequency-hopping communication system during World War II with composer George Antheil.
-This technology was designed to create an un-jammable torpedo guidance system and became a precursor to modern Wi-Fi, GPS, and Bluetooth.
-
-Grace Hopper (1906–1992): This U.S. Navy Rear Admiral was a computer scientist who helped program the Mark I computer during World War II.
-Her key innovations include developing the first compiler, a program that translates written instructions into computer code, and leading the creation of COBOL,
-an early business-friendly programming language.
-
-**
-Jean Bartik (1924 - 2011): Jean Bartik was a groundbreaking computer programmer who made significant contributions to the early development of electronic computers.
-During World War II, she was one of six women recruited by the University of Pennsylvania’s Moore School of Electrical Engineering to work as “computers.”
-Bartik and her colleagues programmed the ENIAC, one of the world’s first electronic computers.
-Their work involved developing complex mathematical calculations and wiring diagrams to enable the ENIAC to perform various tasks, such as calculating military artillery trajectories.
-Bartik’s work on the ENIAC played a pivotal role in shaping the future of computing and programming.
-Her contributions demonstrated the potential of electronic computers to solve complex problems efficiently and laid the foundation for modern computing.
-**
-
-Elizabeth Feinler (1931–present): Elizabeth Feinler’s team at the Stanford Research Institute managed early internet directories.
-Her work on transitioning to the Domain Name System (DNS) introduced the familiar “.com,” “.org,” and “.gov” protocols.
-Her contributions are foundational to the internet as we know it today.
-
-Karen Spärck Jones (1935–2007): Karen Spärck Jones laid the foundation for modern search engines with her work on Inverse Document Frequency (IDF),
-a method still used today to rank search results. Her contributions to natural language processing and information retrieval systems revolutionised how we access information online.
-
-Katherine Johnson (1918–2020): A brilliant mathematician at NASA, Johnson performed complex orbital calculations by hand, verifying the results of early computers.
-Her work was critical to the success of the first U.S. manned spaceflights and the Apollo 11 mission to the moon. 
-
-Annie Easley (1933–2011): Annie Easley attended Xavier University where she majored in pharmacy for around 2 years. She then began her career at NACA (later NASA) as one of only four
-African American employees at the time. She worked on code that contributed to energy-efficient batteries and space technology.
-Easley actively encouraged more women and African Americans to enter STEM fields, inspiring countless individuals to pursue tech careers.
-
-Ruzena Bajcsy (1933–present): The illustrious computer scientist Ruzena Bajcsy stands as a beacon of brilliance in the realms of robotics, artificial intelligence, and computer vision.
-Her pioneering endeavours in computer vision and image processing have revolutionised these disciplines.
-She leaves a lasting impact on a variety of fields, including robotics, healthcare, and security.
-Throughout her remarkable career, she’s ascended to prominent leadership positions in both academia and industry.
-Her body of work encompasses numerous highly influential papers and books on robotics, computer vision, and artificial intelligence.
-Each has contributed significantly to the advancement of scientific and technological progress.
-
-Adele Goldberg (1945–present): As a researcher at Xerox PARC in the 1970s, Goldberg helped develop the Smalltalk programming language and the first modern graphical user interface (GUI).
-Her demo of this system significantly inspired Steve Jobs in the creation of the Apple Macintosh.
-
-Margaret Hamilton (1936–present): A computer scientist who led the Software Engineering Division at M.I.T., Hamilton developed the on-board flight software for NASA's Apollo space missions.
-Her code famously saved the Apollo 11 moon landing from being aborted due to a computer overload.
-
-Radia Perlman (1951–present): Known as the "Mother of the Internet," Perlman invented the Spanning Tree Protocol (STP) in the 1980s, which is fundamental to how networks deliver data.
-This innovation established the basic rules of internet traffic and allowed for the scalability of Ethernet.
-
-Ursula Burns(1958–present): Ursula Burns is a pioneering visionary who has made a significant impact on the technology industry.
-She began her career as an intern at Xerox in 1980 and rose through the ranks with unwavering determination and a passion for innovation.
-As CEO from 2009, Burns led Xerox through a remarkable transformation. The company shifted from being a traditional copier and printer manufacturer to an industry leader in business process outsourcing
-and cutting-edge technology services.
-Beyond her contributions to technology, Burns is known for her commitment to diversity and inclusion in the workplace.
-As a trailblazing African-American woman in a typically homogeneous industry, she has championed the representation of women and minorities in leadership roles.
-With passion and eloquence, Burns advocates for equal opportunities for all employees, ensuring that the workplace fosters an environment where everyone can thrive.
-
-Mary Wilkes (1937–present): Wilkes helped develop the LINC, widely considered the world's first personal computer. In the mid-1960s, she used one of the earliest prototypes in her home,
-making her the first home computer user. 
-
-Gwynne Shotwell (1963–present): If there’s one person responsible for turning space exploration dreams into reality, it’s Gwynne Shotwell, President and COO of SpaceX.
-Under her leadership, SpaceX has become a private aerospace giant, redefining space exploration.
-When Shotwell joined SpaceX in 2002, the company was still a fledgling, ambitious startup, led by Elon Musk.
-But it was Shotwell, not Musk, who helped secure some of the company’s most significant NASA contracts.
-She played a crucial role in the development of the Falcon 9, the first reusable rocket, which dramatically cut space exploration costs.
-Under her leadership, SpaceX achieved historic milestones, including the first commercially crewed spaceflight in 2020 and the Crew Dragon mission, which transported astronauts to the International Space Station.
-
-Her future goals include expanding space tourism and advancing plans to colonize Mars.
-
-
-
-https://visusllc.com/blog/building-a-multi-step-timeline-with-pure-css--a-creative-frontend-solution
+Em 2025, Ana Helena Ulbrich, uma das cofundadoras, foi inclusive incluída na lista das 100 pessoas mais influentes em IA do mundo pela revista americana Time.  
+1981-presente
