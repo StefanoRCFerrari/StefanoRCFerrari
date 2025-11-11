@@ -1,0 +1,202 @@
+const prompt = require('prompt-sync')();
+
+let polinomio = prompt('Informe o polinômio (ex: 3x^2+5x-2): ');
+
+let derivada = [];
+let coefAux;
+let coefVet = [];
+let coefStr;
+let coefInt;
+let potAux;
+let potVet = [];
+let potStr;
+let potInt;
+let i; 
+
+// --- Geração da Derivada de Primeira Ordem ---
+for (i = 0; i < polinomio.length; i++) {
+    if (polinomio[i] === '+' || polinomio[i] === '-') continue;
+
+    if (polinomio[i] === 'x') {
+        // Encontrar Coeficiente
+        coefAux = 0; 
+        coefVet = [];
+        let sinal = 1;
+
+        while (i - 1 - coefAux >= 0 && !isNaN(parseInt(polinomio[i - 1 - coefAux]))) {
+            coefVet.unshift(polinomio[i - 1 - coefAux]);
+            coefAux++;
+        }
+        coefStr = coefVet.join('');
+        coefInt = coefStr === '' ? 1 : parseInt(coefStr);
+
+        let posSinal = i - 1 - coefAux;
+        if (posSinal >= 0 && polinomio[posSinal] === '-') sinal = -1;
+        coefInt *= sinal;
+
+        // Encontrar Potência
+        potAux = 1;
+        potVet = [];
+        if (i + 1 < polinomio.length && polinomio[i + 1] === '^') {
+            potAux = 2;
+            while (i + potAux < polinomio.length && !isNaN(parseInt(polinomio[i + potAux]))) {
+                potVet.push(polinomio[i + potAux]);
+                potAux++;
+            }
+            potInt = parseInt(potVet.join(''));
+            i += potAux - 1;
+        } else {
+            potInt = 1;
+        }
+
+        // Aplicar Regra da Potência
+        let novoCoef = coefInt * potInt;
+        let novaPot = potInt - 1;
+
+        if (novoCoef !== 0) {
+            if (derivada.length > 0 && novoCoef > 0) derivada.push('+');
+
+            if (novaPot > 1) derivada.push(`${novoCoef}x^${novaPot}`);
+            else if (novaPot === 1) derivada.push(`${novoCoef}x`);
+            else derivada.push(`${novoCoef}`);
+        }
+    }
+}
+
+// --- Formatação da Primeira Derivada ---
+let resultado = derivada.join('').replace(/\-\-/g, '+').replace(/\+\-/g, '-');
+if (resultado.startsWith('+')) resultado = resultado.substring(1);
+if (resultado === '' || resultado === '-' || resultado === '+') resultado = '0';
+console.log(`\nDerivada de Primeira Ordem (f'(x)): ${resultado}`);
+
+// --- Segunda Derivada ---
+let derivada2 = [];
+for (let j = 0; j < resultado.length; j++) {
+    if (resultado[j] === '+' || resultado[j] === '-') continue;
+
+    if (resultado[j] === 'x') {
+        coefAux = 0;
+        coefVet = [];
+        let sinal = 1;
+
+        while (j - 1 - coefAux >= 0 && !isNaN(parseInt(resultado[j - 1 - coefAux]))) {
+            coefVet.unshift(resultado[j - 1 - coefAux]);
+            coefAux++;
+        }
+        coefStr = coefVet.join('');
+        coefInt = coefStr === '' ? 1 : parseInt(coefStr);
+        let posSinal = j - 1 - coefAux;
+        if (posSinal >= 0 && resultado[posSinal] === '-') sinal = -1;
+        coefInt *= sinal;
+
+        potAux = 1;
+        potVet = [];
+        if (j + 1 < resultado.length && resultado[j + 1] === '^') {
+            potAux = 2;
+            while (j + potAux < resultado.length && !isNaN(parseInt(resultado[j + potAux]))) {
+                potVet.push(resultado[j + potAux]);
+                potAux++;
+            }
+            potInt = parseInt(potVet.join(''));
+            j += potAux - 1;
+        } else {
+            potInt = 1;
+        }
+
+        let novoCoef2 = coefInt * potInt;
+        let novaPot2 = potInt - 1;
+
+        if (novoCoef2 !== 0) {
+            if (derivada2.length > 0 && novoCoef2 > 0) derivada2.push('+');
+            if (novaPot2 > 1) derivada2.push(`${novoCoef2}x^${novaPot2}`);
+            else if (novaPot2 === 1) derivada2.push(`${novoCoef2}x`);
+            else derivada2.push(`${novoCoef2}`);
+        }
+    }
+}
+
+let segunda = derivada2.join('').replace(/\-\-/g, '+').replace(/\+\-/g, '-');
+if (segunda.startsWith('+')) segunda = segunda.substring(1);
+if (segunda === '' || segunda === '-' || segunda === '+') segunda = '0';
+console.log(`Derivada de Segunda Ordem (f''(x)): ${segunda}`);
+
+// --- Correção: Extração robusta do termo constante ---
+let termoConstanteDerivada = 0;
+let regexConstante = /([+\-]?\d+)(?![x\d^])/g;
+let match;
+let ultimaConstante = 0;
+while ((match = regexConstante.exec(resultado)) !== null) {
+    ultimaConstante = parseInt(match[1]); // Pega o último número isolado
+}
+termoConstanteDerivada = ultimaConstante || 0;
+
+// --- Verifica se f'(x) é constante ---
+let isConstante = !resultado.includes('x');
+if (isConstante) termoConstanteDerivada = parseInt(resultado) || 0;
+
+// --- Busca do ponto crítico ---
+let inicio = parseFloat(prompt('\nInforme o início do intervalo para Ponto Crítico: '));
+let fim = parseFloat(prompt('Informe o fim do intervalo para Ponto Crítico: '));
+let tolerancia = parseFloat(prompt('Informe a margem de tolerância (epsilon): '));
+let pontoMedio = (inicio + fim) / 2;
+
+let resulIni, resulFim, resulPM;
+
+do {
+    resulIni = termoConstanteDerivada;
+    resulFim = termoConstanteDerivada;
+    resulPM = termoConstanteDerivada;
+
+    for (i = 0; i < resultado.length; i++) {
+        if (resultado[i] === 'x') {
+            coefAux = 0; 
+            coefVet = [];
+            let sinal = 1;
+
+            while (i - 1 - coefAux >= 0 && !isNaN(parseInt(resultado[i - 1 - coefAux]))) {
+                coefVet.unshift(resultado[i - 1 - coefAux]);
+                coefAux++;
+            }
+            coefStr = coefVet.join('');
+            coefInt = coefStr === '' ? 1 : parseInt(coefStr);
+
+            let posSinal = i - 1 - coefAux;
+            if (posSinal >= 0 && resultado[posSinal] === '-') sinal = -1;
+            coefInt *= sinal;
+
+            potAux = 1; 
+            potVet = [];
+            if (i + 1 < resultado.length && resultado[i + 1] === '^') {
+                potAux = 2;
+                while (i + potAux < resultado.length && !isNaN(parseInt(resultado[i + potAux]))) {
+                    potVet.push(resultado[i + potAux]);
+                    potAux++;
+                }
+                potInt = parseInt(potVet.join(''));
+                i += potAux - 1; 
+            } else {
+                potInt = 1;
+            }
+
+            resulIni += coefInt * (inicio ** potInt);
+            resulFim += coefInt * (fim ** potInt);
+            resulPM += coefInt * (pontoMedio ** potInt);
+        }
+    }
+
+    if (Math.abs(resulPM) > tolerancia) {
+        if (resulIni * resulPM > 0) inicio = pontoMedio;
+        else fim = pontoMedio;
+        pontoMedio = (inicio + fim) / 2;
+    }
+
+} while (Math.abs(resulPM) > tolerancia && Math.abs(fim - inicio) > tolerancia);
+
+console.log('\n---------------------------------');
+console.log(`Busca do Ponto Crítico (f'(x) ≈ 0):`);
+console.log(`Derivada no ponto de início ${inicio.toFixed(2)}: ${resulIni.toFixed(4)}`);
+console.log(`Derivada no ponto médio ${pontoMedio.toFixed(2)}: ${resulPM.toFixed(4)}`);
+console.log(`Derivada no ponto final ${fim.toFixed(2)}: ${resulFim.toFixed(4)}`);
+if (Math.abs(resulPM) <= tolerancia) console.log(`Ponto crítico em x ≈ ${pontoMedio.toFixed(4)}`);
+else console.log(`Ponto crítico não encontrado no intervalo informado.`);
+console.log('---------------------------------');
