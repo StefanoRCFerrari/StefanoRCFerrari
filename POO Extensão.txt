@@ -1,0 +1,42 @@
+Questão POO:
+Classe CasaDeRepouso tem subclasses Pacientes e Cuidadores
+Pacientes e Cuidadores podem estar fora de casas de repouso
+Dá pra "pular/skip" uma classe? Ou deixamos ela como algo que pode estar simplesmente vazio?
+
+
+Classe CasaDeRepouso:
+   Atributos:
+      nomeFantasia
+      razãoSocial
+      cnpj
+      endereço
+      e-mail
+      site
+      cuidadores
+      pacientes
+   Métodos:
+      listarColaboradores
+      listarClientes
+      atualizarEmail
+      atualizarEndereço
+      atualizarSite
+      
+
+
+
+Classe Usuário:
+   Atributos:
+      nome:
+      casaDeRepouso
+      cuidadoresResponsaveis
+      pacientesAtendidos
+      agendas (struct: medicamentos, pacientes, horários e conciliação medicamentosa)
+   Métodos:
+      getNovoCuidador
+      getNovoPaciente
+      removeCuidador
+      removePaciente
+      atualizaCuidador
+      atualizaPaciente
+      listarCuidadores
+      listarPacientes
