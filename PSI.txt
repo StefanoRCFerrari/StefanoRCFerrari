@@ -1,0 +1,50 @@
+Ambiente - Academia (Rede/Franquia)
+Cenário - Unidade de academia no modelo e rede/franquia em bairro de classe média/alta com alta circulação de pessoas e em área com alta movimentação comercial nos arredores.
+Estacionamento com acesso direto à rua e ao ambiente de treino, mas ainda requisitando que os alunos passem pelas catracas e seus convidados sejam devidamente cadastrados pelo totem de identificação na entrada.
+
+Pontos Importantes:
+- Segurança física de acesso ao local de treino
+   - Câmeras de segurança estratégicamente posicionadas
+   - Catracas com biometria (digitais)
+   - Totem de entrada (novas matriculas, alterações de plano e programa de controle de acesso de convidados)
+
+- Segurança física de acesso ao estacionamento
+   - Cadastro prévio de veículos dos alunos
+   - Câmeras de segurança estratégicamente posicionadas
+
+- Segurança dos dados dos alunos
+   - Acesso controlado ás funções do sistema:
+      - Alunos podem apenas consultar e atualizar suas próprias informações, recepcionistas tem mais acesso, porém ainda inferior às de um adm.    	Apenas adms tem acesso a funções do sistema que alterem dados de outros funcionários. Personal trainers tem acesso apenas às informações 	dos alunos atendidos diretamente por eles e apenas às informações que impactem diretamente nos programas de treino
+
+- Data centers locais (por unidade) e centrais (em data centers da franquia)
+   - Segurança física reforçada com controle de acesso à sala onde está localizado o hardware desse datacenter
+   - Funções que acessem mais diretamente os dados armazenados restritas aos cargos mais altos
+   - Sincronização e backup com o datacenter central (da franquia) como forma de vistoriar e assegurar as conformidades do DB local
+
+- Vestiários:
+   - Botão de "emergência" - Câmeras em vestiários são invasivas, portanto, para denúncias ou alarmes, instalar botões que discretamente avisem     			     a equipe da unidade a respeito de quaisquer "não conformidades" nos vestiários
+
+- Armários:
+   - Armários com travas eletrônicas (também por biometria) e com a opção de reforço a partir de um cadeado trazido pelo próprio aluno.
+
+PSI:
+- Diretrizes p/ alunos
+   - Convidados são aceitos apenas durante a permanência do aluno matriculado no local de treino
+   - Convidados vinculados ao CPF de um aluno ausente serão barrados
+      - Cruzamento de dados entre convidados presentes e alunos matriculados presentes
+      - Obrigatoriedade de vincular, a cada visita, o convidado ao CPF do aluno "anfitrião" daquela visita
+- Diretrizes p/ recepcionistas
+   - Coleta adequada dos dados, confirmados através de documentos oficiais e rigor ao coletar fotos e digitais dos alunos
+   - Armazenamento adequado de cópias físicas e digitalizadas dos documentos que atestem a aptidão do aluno para a prática de atividades    	físicas, utilizando os mecanismos necessários para a autenticação das cópias desses documentos
+- Diretrizes p/ personal trainers
+   - Assegurar a privacidade dos dados, instaurando controle de acesso aos dados dos alunos apenas quando estiverem presentes e apenas aos    	personal trainers que atendam diretamente esses alunos. A sessão deve ser encerrada automaticamente a partir do momento que o aluno 	deixar o ambiente de treino;
+- Diretrizes p/ adms
+   - Atribuir credenciais apenas aos funcionários adequadamente registrados, não compartilhar essas credenciais, gerir os acessos a partir dos 	horários em que os funcionários estão presente na unidade e checar logs de uso de cada sistema/usuário
+   - Vistoriar os backups locais o DB.
+
+
+https://www.gov.br/governodigital/pt-br/privacidade-e-seguranca/ppsi/modelo_politica_seguranca_informacao.pdf
+
+https://www.gov.br/governodigital/pt-br/privacidade-e-seguranca/ppsi/guia_framework_psi.pdf
+
+PSI do TCU (aberto)
