@@ -1,3 +1,6 @@
+!!! - Conciliação medicamentosa: Permitir que usuários acrescentem medicamentos à própria lista, requisitar compartilhamento de dados sobre a conciliação e adicionar ao DB. Deixar claro nos termos que o sistema não se responsabiliza por conciliação medicamentosa e outros controles, servindo apenas como um facilitador da organização da agenda. Futuramente, em caso de parceria, aumentar a robustez dessa função, tornando isso um diferencial do sistema.
+
+
 Questão POO:
 Classe CasaDeRepouso tem subclasses Pacientes e Cuidadores
 Pacientes e Cuidadores podem estar fora de casas de repouso
