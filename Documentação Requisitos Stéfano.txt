@@ -1,0 +1,30 @@
+WhatsApp:
+Requisito funcional: Troca de mensagens:
+
+O usuário deve ser capaz de enviar e receber de forma instantânea (mediante a existência de uma conexão de internet ativa) mensagens de voz, texto (inclusive "emojis") ou com conteúdo multimídia (fotos, vídeos, arquivos em geral) para os contatos que estejam vinculados ao próprio WhatsApp e/ou à lista de contatos telefônicos do aparelho celular que iniciou a conexão com o aplicativo, além de contatos novos que o acionem ou sejam acionados a partir do número de celular diretamente ou da interação em grupos de contatos dos quais o usuário fizer parte.
+
+Requisito não funcional: Segurança dos dados do perfil (sessão privacidade):
+
+O usuário deve ser capaz de controlar quem visualiza as informações compartilhadas em seu perfil (foto de perfil; frase de recado; status online e visto pela última vez; links; status; informações do pix; confirmações de leitura), podendo personalizar se serão vistas por todos, apenas por seus contatos, apenas por contatos selecionados ou por ninguém, podendo configurar cada um dos itens acima separados por ponto-e-vírgula (;) de forma independente.
+
+Diagrama caso de uso:
+Usuário -> Compõe e envia a mensagem -> Tem conexão [S/N] -> (S) Mensagem criptografada e enviada ao(s) destinatário(s) -> Conexão do destinatário disponível [S/N] -> (S) Mensagem recebida, descriptografada e exibida ao(s) destinatário(s).
+
+N1 -> Mensagem permanece apenas no dispositivo de origem, esperando a disponibilidade da conexão para ser enviada ou o timeout para acusar erro, exigindo que o usuário solicite uma nova tentativa de envio.
+N2 -> Mensagem enviada mas não entregue, permanecendo "suspensa" até que o destinatário em questão tenha uma conexão ativa disponível.
+
+Cenário/Fluxo:
+- Usuário 1 deseja informar seu colega de trabalho, Usuário 2, a respeito de uma reunião
+- Usuário 1 não tem Dados Móveis disponíveis nem está num Hotspot de acesso WiFi
+- Usuário 1 digita a mensagem, envia, mas nota que o status da mensagem permanece como "não enviada"
+- Usuário 1 demora demais para ter uma conexão ativa e a mensagem agora exibe um alerta de erro ao enviar
+- Usuário 1 encontra um local com acesso à internet
+- Usuário 1 ativa a opção de reenvio da mensagem
+- Usuário 1 envia com sucesso a mensagem ao Usuário 2, que encontra-se sem conexão no momento
+- A mensagem de Usuário 1 acusa "enviada mas não entregue"
+- Após alguns minutos, Usuário 2 chega a um local com conexão WiFi disponível
+- A mensagem é entregue ao Usuário 2 com sucesso e o status da mensagem é alterado, para ambos os usuários como "entregue"
+- Caso ambos os usuários tenham a opção "Confirmação De Leitura" ativa, logo que Usuário 2 abre a conversa com Usuário 1 e lê a mensagem, o status é alterado para "Lida"
+
+
+armando.fatec@gmail.com
