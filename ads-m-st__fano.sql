@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20-Mar-2026 às 16:34
+-- Tempo de geração: 23-Mar-2026 às 16:37
 -- Versão do servidor: 10.4.6-MariaDB
 -- versão do PHP: 7.2.22
 
@@ -31,9 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `consulta` (
   `CodConv` int(11) NOT NULL,
   `CodPaci` int(11) NOT NULL,
-  `CRM` int(11) NOT NULL,
+  `CRM` varchar(11) NOT NULL,
   `Data-Hora` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `consulta`
+--
+
+INSERT INTO `consulta` (`CodConv`, `CodPaci`, `CRM`, `Data-Hora`) VALUES
+(1, 1, '001', '2026-03-23'),
+(2, 2, '002', '2026-03-23');
 
 -- --------------------------------------------------------
 
@@ -46,6 +54,14 @@ CREATE TABLE `convenio` (
   `Nome` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `convenio`
+--
+
+INSERT INTO `convenio` (`CodConv`, `Nome`) VALUES
+(1, 'Unimed'),
+(2, 'Dunimed');
+
 -- --------------------------------------------------------
 
 --
@@ -53,10 +69,20 @@ CREATE TABLE `convenio` (
 --
 
 CREATE TABLE `medico` (
-  `CRM` int(11) NOT NULL,
+  `CRM` varchar(11) NOT NULL,
   `Nome` varchar(40) NOT NULL,
   `Especialização` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `medico`
+--
+
+INSERT INTO `medico` (`CRM`, `Nome`, `Especialização`) VALUES
+('001', 'Ze Roberto', 'Dermatologista'),
+('002', 'Humberto', 'Neurologista'),
+('003', 'Dois Berto', 'Cardiologista'),
+('004', 'Tres Berto', 'Pediatra');
 
 -- --------------------------------------------------------
 
@@ -69,6 +95,14 @@ CREATE TABLE `paciente` (
   `CodPaci` int(11) NOT NULL,
   `Nome` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `paciente`
+--
+
+INSERT INTO `paciente` (`CodConv`, `CodPaci`, `Nome`) VALUES
+(1, 1, 'Jailson Mendes'),
+(2, 2, 'Paulo Guina');
 
 --
 -- Índices para tabelas despejadas
@@ -107,8 +141,9 @@ ALTER TABLE `paciente`
 -- Limitadores para a tabela `consulta`
 --
 ALTER TABLE `consulta`
-  ADD CONSTRAINT `consmed` FOREIGN KEY (`CRM`) REFERENCES `medico` (`CRM`),
-  ADD CONSTRAINT `conspaci` FOREIGN KEY (`CodConv`,`CodPaci`) REFERENCES `paciente` (`CodConv`, `CodPaci`);
+  ADD CONSTRAINT `consconv` FOREIGN KEY (`CodConv`) REFERENCES `convenio` (`CodConv`),
+  ADD CONSTRAINT `conspaci` FOREIGN KEY (`CodConv`,`CodPaci`) REFERENCES `paciente` (`CodConv`, `CodPaci`),
+  ADD CONSTRAINT `preventiva` FOREIGN KEY (`CRM`) REFERENCES `medico` (`CRM`);
 
 --
 -- Limitadores para a tabela `paciente`
