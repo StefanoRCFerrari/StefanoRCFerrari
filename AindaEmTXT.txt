@@ -1,0 +1,128 @@
+#!/bin/bash
+# Stéfano Ferrari - Jogo da Forca em Bash
+
+resp="S"
+
+while [[ "$resp" == "S" ]]; do #Começa aqui
+
+    numero_tent=0
+    tentativa=""
+    cont=0
+
+    listaPalavras=(
+    "abacaxi" "porcelana" "sereia" "fatia" "janela"
+    "farofa" "protetor" "cuidado" "satisfeito" "toalha"
+    "costela" "academia" "perigoso" "arejado" "setembro"
+    "meridiano" "mosquito" "recibo" "questionamento" "gravata"
+    ) #Pra colocar mais palavras, precisa aumentar aqui
+
+    ja_tentou=()
+    qt_tentadas=0
+
+    random=$((RANDOM % ${#listaPalavras[@]}))
+    escolhida="${listaPalavras[$random]}" #Já separou a palavra que escolheu da lista
+
+    tamanho=${#escolhida}
+
+    # Inicializa palavra oculta
+    oculta=()
+    for ((cont=0; cont<tamanho; cont++)); do
+        oculta+=("_")
+    done
+
+    #Loopzinho básico do jogo em si até acertar ou morrer
+    while true; do
+
+        echo
+        echo -n "Palavra: "
+        for ((cont=0; cont<tamanho; cont++)); do
+            echo -n "${oculta[$cont]} "
+        done
+        echo
+
+        echo -n "Letras usadas: "
+        for ((cont=0; cont<qt_tentadas; cont++)); do
+            echo -n "${ja_tentou[$cont]} "
+        done
+        echo
+
+        echo "Erros: $numero_tent/6"
+
+        read -p "Digite uma letra: " tentativa
+
+        tentativa=$(echo "$tentativa" | tr '[:upper:]' '[:lower:]')
+
+        if [[ ! "$tentativa" =~ ^[a-z]$ ]]; then
+            echo "Digite apenas uma letra valida!"
+            continue
+        fi #Bash também compara caractere com regex, salva demais
+
+        repetida=0
+        for ((cont=0; cont<qt_tentadas; cont++)); do
+            if [[ "${ja_tentou[$cont]}" == "$tentativa" ]]; then
+                repetida=1
+                break
+            fi
+        done
+
+        if [[ $repetida -eq 1 ]]; then
+            echo "Voce ja tentou essa letra!"
+            continue
+        fi
+        
+        ja_tentou[$qt_tentadas]="$tentativa"
+        ((qt_tentadas++))
+
+        acertou=0
+
+        for ((cont=0; cont<tamanho; cont++)); do
+            if [[ "${escolhida:$cont:1}" == "$tentativa" ]]; then
+                oculta[$cont]="$tentativa"
+                acertou=1
+            fi
+        done
+
+        if [[ $acertou -eq 0 ]]; then
+            ((numero_tent++))
+            echo "Errou!"
+        else
+            echo "Acertou!"
+        fi
+        
+        venceu=1 #Deduz que venceu, exceto que encontre um underscore provando o contrário...
+        for ((cont=0; cont<tamanho; cont++)); do
+            if [[ "${oculta[$cont]}" == "_" ]]; then
+                venceu=0
+                break
+            fi
+        done
+
+        if [[ $venceu -eq 1 ]]; then
+            echo
+            echo -n "Palavra: "
+            for ((cont=0; cont<tamanho; cont++)); do
+                echo -n "${oculta[$cont]} "
+            done
+            echo
+            echo "Voce venceu!"
+            break
+        fi
+        
+        if [[ $numero_tent -ge 6 ]]; then
+            echo
+            echo "Voce perdeu! Palavra era: $escolhida"
+            break
+        fi
+
+    done
+    
+    read -p "Deseja jogar novamente? (S/N): " resp
+    resp=$(echo "$resp" | tr '[:lower:]' '[:upper:]')
+
+    while [[ "$resp" != "S" && "$resp" != "N" ]]; do
+        echo "Entrada invalida. Digite S ou N:"
+        read resp
+        resp=$(echo "$resp" | tr '[:lower:]' '[:upper:]')
+    done
+
+done
