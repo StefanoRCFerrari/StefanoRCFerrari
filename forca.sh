@@ -6,7 +6,7 @@ verde="\e[32m"
 vermelho="\e[31m"
 reset="\e[0m"
 
-# Função pra desenhar a forca - FIXED ASCII ART
+# Função pra desenhar a forca - ASCII
 desenhar_forca() {
     case $numero_tent in
         0) 
