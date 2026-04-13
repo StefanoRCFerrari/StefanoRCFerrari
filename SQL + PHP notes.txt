@@ -1,0 +1,128 @@
+SQL + PHP Study Notes (Locadora Exercise)
+
+1. DATABASE STRUCTURE
+
+Database: dbLocadora
+
+Tables:
+- tbCategorias (idCategoria, nomeCategoria)
+- tbFilmes (idFilme, tituloFilme, duracaoFilme, valorLocacao, idCategoria)
+
+Concepts:
+- Primary Key (PK): unique identifier (AUTO_INCREMENT)
+- Foreign Key (FK): connects tables
+- Relationship: 1 Categoria → N Filmes
+
+
+2. AUTO_INCREMENT
+
+Using NULL:
+
+INSERT INTO tbFilmes (idFilme, tituloFilme, ...)
+VALUES (NULL, 'Filme...', ...);
+
+- MySQL generates IDs automatically
+- Keeps column structure visible
+- Correct for learning and practice
+
+
+3. INSERT ORDER
+
+Always insert:
+1. tbCategorias first
+2. tbFilmes second
+
+Reason:
+Foreign Key requires existing category
+
+
+4. JOIN (VERY IMPORTANT)
+
+SELECT 
+    f.tituloFilme,
+    c.nomeCategoria
+FROM tbFilmes f
+JOIN tbCategorias c
+ON f.idCategoria = c.idCategoria;
+
+Purpose:
+- Combine data from multiple tables
+- Core concept of relational databases
+
+
+5. PHP CONNECTION (PDO)
+
+<?php
+$pdo = new PDO("mysql:host=localhost;dbname=dbLocadora;charset=utf8", "root", "");
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+?>
+
+
+6. FETCH DATA IN PHP
+
+<?php
+$sql = "SELECT f.tituloFilme, c.nomeCategoria
+        FROM tbFilmes f
+        JOIN tbCategorias c ON f.idCategoria = c.idCategoria";
+
+$stmt = $pdo->query($sql);
+$filmes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+
+7. DISPLAY DATA IN HTML
+
+<table>
+<?php foreach ($filmes as $filme): ?>
+<tr>
+    <td><?= $filme['tituloFilme'] ?></td>
+    <td><?= $filme['nomeCategoria'] ?></td>
+</tr>
+<?php endforeach; ?>
+</table>
+
+
+8. SECURE QUERIES (IMPORTANT)
+
+<?php
+$stmt = $pdo->prepare("SELECT * FROM tbFilmes WHERE idFilme = ?");
+$stmt->execute([1]);
+?>
+
+- Prevents SQL Injection
+- Safer and professional
+
+
+9. MENTAL MODEL
+
+SQL → gets data from database
+PHP → sends queries and receives results
+HTML → displays data to user
+
+
+10. WHAT TO FOCUS ON
+
+- Foreign Key relationships
+- JOIN queries
+- SELECT basics
+- AUTO_INCREMENT with NULL
+- PHP database connection (PDO)
+
+
+11. AVOID
+
+- mysql_connect() (old and deprecated)
+- Direct variables inside SQL strings
+- Copying without understanding
+
+
+12. SUMMARY
+
+You already understand:
+- Database structure
+- Relationships
+- Basic SQL
+
+Now focus on:
+- JOIN operations
+- PHP + SQL integration
